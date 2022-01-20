@@ -20,7 +20,15 @@ let issuesD = [
 		created_by: "Martin",
 		assigned_to: "Martin",
 		status_text: "work in progress"
-	}
+	},
+	{
+		issue_title: "Todo app",
+		issue_text: "Items don't appear",
+		created_by: "Martin",
+		assigned_to: "Martin",
+		status_text: "work in progress",
+		open: false
+	},
 ]
 
 !async function () {
