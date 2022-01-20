@@ -11,8 +11,8 @@ const fccTestingRoutes = require('./routes/fcctesting.js');
 const runner = require('./test-runner');
 const mongoose = require("mongoose");
 
-// mongoose.connect(`mongodb+srv://${process.env.db_USER}:${process.env.db_PASS}@${process.env.db_HOST}/issue-tracker?retryWrites=true&w=majority`);
-mongoose.connect("mongodb://127.0.0.1:27017/issue-tracker");
+mongoose.connect(`mongodb+srv://${process.env.db_USER}:${process.env.db_PASS}@${process.env.db_HOST}/issue-tracker?retryWrites=true&w=majority`);
+// mongoose.connect("mongodb://127.0.0.1:27017/issue-tracker");
 
 let app = express();
 
