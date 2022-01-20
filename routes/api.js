@@ -50,7 +50,7 @@ module.exports = function (app) {
 			if (!body._id)
 				throw new AppError({ error: "missing _id" }, 200);
 			else if (Object.keys(body).length < 2)
-				throw new AppError({ error: "no update field(s) sent", "_id": _id }, 200);
+				throw new AppError({ error: "no update field(s) sent", "_id": body._id }, 200);
 			if (body.open === "false") body.open = false;
 			else body.open = true;
 			body.updated_on = Date.now();
