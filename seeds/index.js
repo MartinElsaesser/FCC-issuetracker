@@ -1,8 +1,9 @@
 const Project = require("../models/Project");
 const Issue = require("../models/Issue");
 const mongoose = require("mongoose");
+require('dotenv').config();
 
-mongoose.connect("mongodb://127.0.0.1:27017/issue-tracker");
+mongoose.connect(`mongodb+srv://${process.env.db_USER}:${process.env.db_PASS}@${process.env.db_HOST}/issue-tracker?retryWrites=true&w=majority`);
 
 let projectD = {
 	name: "apitest",

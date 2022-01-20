@@ -223,7 +223,6 @@ suite('Functional Tests', function () {
 			.type("form")
 			.send({})
 			.end(function (err, res) {
-				console.log(res.body);
 				assert.deepEqual(res.body, { error: "missing _id" })
 				done();
 			});
