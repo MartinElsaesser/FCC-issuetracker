@@ -16,9 +16,13 @@ module.exports = function (app) {
 
 		.get(wrap(async function (req, res) {
 			let project = req.params.project;
+			let filter = req.query;
 			// eiter get existing project
 			let responseArr = [];
-			const pData = await Project.findOne({ name: project }).populate("issues");
+			const pData = await Project.findOne({ name: project }).populate({
+				path: 'issues',
+				match: filter,
+			});
 			if (pData) responseArr = pData.issues;
 			// or create new project
 			else await Project.create({ name: project });
